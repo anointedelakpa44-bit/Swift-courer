@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Swift Courier</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="index.html">SWIFT<span>COURIER</span></a>
+    <nav>
+      <a href="index.html">Home</a><a href="track.html">Track Package</a>
+      <a href="services.html">Services</a><a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="btn btn-small" href="track.html">Track Shipment</a>
+  </header>
+  <main>
+    <section class="page-banner">
+      <p class="eyebrow">WE'RE HERE TO HELP</p>
+      <h1>Contact Our Team</h1>
+      <p>Questions about a package? Get in touch with us.</p>
+    </section>
+    <section class="contact-layout">
+      <div class="contact-info">
+        <h2>Let's talk about your shipment.</h2>
+        <p>Use the contact details configured by your courier business.</p>
+        <p><strong>Email:</strong> your-email@example.com</p>
+        <p><strong>Phone:</strong> Add your business phone number</p>
+        <p><strong>Office:</strong> Add your business address</p>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <label>Your Name<input id="contactName" required></label>
+        <label>Email Address<input id="contactEmail" type="email" required></label>
+        <label>Message<textarea id="contactText" rows="5" required></textarea></label>
+        <button class="btn" type="submit">Prepare Message</button>
+        <p id="contactMessage" class="message"></p>
+      </form>
+    </section>
+  </main>
+  <footer><a class="logo" href="index.html">SWIFT<span>COURIER</span></a><p>© Swift Courier</p><a href="track.html">Track Package</a></footer>
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("contactName").value.trim();
+      const email = document.getElementById("contactEmail").value.trim();
+      const message = document.getElementById("contactText").value.trim();
+      const subject = encodeURIComponent("Courier website enquiry");
+      const body = encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\n" + message);
+      document.getElementById("contactMessage").textContent =
+        "Your email application will open. Send the prepared message to your configured business email.";
+      window.location.href = "mailto:your-email@example.com?subject=" + subject + "&body=" + body;
+    });
+  </script>
+</body>
+</html>

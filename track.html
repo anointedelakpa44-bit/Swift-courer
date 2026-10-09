@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track a Package | Swift Courier</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="index.html">SWIFT<span>COURIER</span></a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="track.html">Track Package</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="btn btn-small" href="track.html">Track Shipment</a>
+  </header>
+
+  <main>
+    <section class="page-banner">
+      <p class="eyebrow">SHIPMENT INFORMATION</p>
+      <h1>Track Your Package</h1>
+      <p>Get the latest recorded update for your shipment.</p>
+    </section>
+
+    <section class="tracking-panel">
+      <form id="trackForm" class="track-form">
+        <input id="trackingNumber" type="text"
+          placeholder="Enter your tracking number" required>
+        <button class="btn" type="submit">Track Package</button>
+      </form>
+      <p id="trackMessage" class="message"></p>
+      <div id="trackingResult" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="index.html">SWIFT<span>COURIER</span></a>
+    <p>© <span id="year"></span> Swift Courier. Demo website.</p>
+    <a href="contact.html">Contact</a>
+  </footer>
+</body>
+</html>

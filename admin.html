@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipment Admin | Swift Courier</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/admin.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="index.html">SWIFT<span>COURIER</span></a>
+    <nav>
+      <a href="index.html">Website</a>
+      <a href="track.html">Tracking Page</a>
+      <a href="services.html">Services</a>
+    </nav>
+    <span class="admin-label">DEMO ADMIN</span>
+  </header>
+
+  <main class="admin-layout">
+    <section class="admin-heading">
+      <p class="eyebrow">SHIPMENT CONTROL CENTER</p>
+      <h1>Admin Dashboard</h1>
+      <p>Create and manage your parcel records.</p>
+    </section>
+
+    <div class="stats-grid">
+      <article class="stat-card">
+        <p>Total Shipments</p>
+        <h2 id="totalCount">0</h2>
+      </article>
+      <article class="stat-card">
+        <p>On Hold</p>
+        <h2 id="holdCount">0</h2>
+      </article>
+      <article class="stat-card">
+        <p>In Transit</p>
+        <h2 id="transitCount">0</h2>
+      </article>
+      <article class="stat-card">
+        <p>Delivered</p>
+        <h2 id="deliveredCount">0</h2>
+      </article>
+    </div>
+
+    <section class="admin-panel">
+      <h2>Create New Shipment</h2>
+      <p class="muted">A unique tracking number will be generated automatically.</p>
+
+      <form id="shipmentForm" class="shipment-form">
+        <label>
+          Sender Name
+          <input id="sender" required placeholder="Full name">
+        </label>
+        <label>
+          Receiver Name
+          <input id="receiver" required placeholder="Full name">
+        </label>
+        <label>
+          Sender Location
+          <input id="origin" required placeholder="City, State">
+        </label>
+        <label>
+          Destination
+          <input id="destination" required placeholder="City, State">
+        </label>
+        <label>
+          Package Description
+          <input id="description" required placeholder="Documents, clothes, etc.">
+        </label>
+        <label>
+          Initial Status
+          <select id="status">
+            <option value="On Hold">On Hold</option>
+            <option value="In Transit">In Transit</option>
+            <option value="Delivered">Delivered</option>
+          </select>
+        </label>
+        <button class="btn" type="submit">＋ Create Shipment</button>
+      </form>
+
+      <div id="createdNotice" class="message" aria-live="polite"></div>
+    </section>
+
+    <section class="admin-panel">
+      <div class="panel-heading">
+        <div>
+          <h2>Manage Shipments</h2>
+          <p class="muted">Search, update, or remove demo records.</p>
+        </div>
+        <input id="shipmentSearch" type="search"
+          placeholder="Search tracking number or name...">
+      </div>
+
+      <div class="table-wrap">
+        <table class="shipment-table">
+          <thead>
+            <tr>
+              <th>Tracking Number</th>
+              <th>Receiver</th>
+              <th>Route</th>
+              <th>Status</th>
+              <th>Update Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="shipmentTableBody"></tbody>
+        </table>
+      </div>
+      <p id="emptyShipments" class="muted">No shipments created yet.</p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="index.html">SWIFT<span>COURIER</span></a>
+    <p>Demo dashboard — not secured for production use.</p>
+    <a href="index.html">View Website</a>
+  </footer>
+</body>
+</html>
